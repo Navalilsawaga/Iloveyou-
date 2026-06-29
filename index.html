@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ты не одна ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #0b0e1a 0%, #1a1f33 100%);
+            min-height: 100vh;
+            padding: 30px 20px 60px;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* главный заголовок */
+        .main-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #f9a8d4, #fcd34d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .sub-title {
+            text-align: center;
+            color: #a5b4fc;
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* карточка с картинкой */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 28px 20px 24px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.6);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.01);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 18px;
+            display: block;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            background: #1e2340;
+            min-height: 120px;
+            object-fit: contain;
+        }
+
+        /* текст под картинкой */
+        .card-text {
+            margin-top: 16px;
+            font-size: 20px;
+            font-weight: 600;
+            text-align: center;
+            color: #e0e7ff;
+            letter-spacing: 0.3px;
+            line-height: 1.5;
+        }
+
+        .card-text .highlight {
+            color: #fcd34d;
+        }
+
+        /* блок поддержки внизу каждой карточки */
+        .support-line {
+            margin-top: 14px;
+            text-align: center;
+            font-size: 15px;
+            color: #a5b4fc;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 14px;
+        }
+
+        .support-line a {
+            color: #f9a8d4;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .support-line a:hover {
+            text-decoration: underline;
+        }
+
+        /* большой блок любви */
+        .love-block {
+            background: linear-gradient(145deg, rgba(249, 168, 212, 0.12), rgba(252, 211, 77, 0.08));
+            border-radius: 28px;
+            padding: 30px 24px;
+            margin-top: 20px;
+            border: 1px solid rgba(249, 168, 212, 0.2);
+            text-align: center;
+        }
+
+        .love-block h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #fcd34d;
+            margin-bottom: 12px;
+        }
+
+        .love-block p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #c7d2fe;
+            max-width: 480px;
+            margin: 0 auto 16px;
+        }
+
+        .love-block .big-heart {
+            font-size: 48px;
+            display: block;
+            margin: 10px 0 6px;
+        }
+
+        /* экстренная кнопка */
+        .crisis-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            margin-top: 16px;
+            background: linear-gradient(90deg, #ef4444, #dc2626);
+            border: none;
+            border-radius: 60px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+            letter-spacing: 0.5px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .crisis-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 30px rgba(239, 68, 68, 0.4);
+        }
+
+        .crisis-btn.small {
+            font-size: 16px;
+            padding: 14px;
+            background: linear-gradient(90deg, #8b5cf6, #6d28d9);
+        }
+
+        .crisis-btn.small:hover {
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4);
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* placeholder для картинок */
+        .img-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1e2340;
+            border-radius: 18px;
+            min-height: 180px;
+            color: #6b7280;
+            font-size: 14px;
+            border: 2px dashed #374151;
+        }
+
+        /* адаптив */
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 22px;
+            }
+            .card-text {
+                font-size: 17px;
+            }
+            .love-block h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- шапка -->
+        <div class="main-title">Ты не одна ❤️</div>
+        <div class="sub-title">Каждая твоя эмоция имеет значение</div>
+
+        <!-- ========================================= -->
+        <!--  КАРТОЧКИ С ТВОИМИ КАРТИНКАМИ            -->
+        <!--  ВСТАВЬ СВОИ ФАЙЛЫ ВМЕСТО placeholder.png -->
+        <!-- ========================================= -->
+
+        <!-- 1 -->
+        <div class="card">
+            <img src="placeholder.png" alt="НЕТ, ТЫ НЕ ГЛУПАЯ" onerror="this.style.display='none'">
+            <div class="card-text">НЕТ, ТЫ НЕ ГЛУПАЯ</div>
+            <div class="support-line">@rock_rockjohnson</div>
+        </div>
+
+        <!-- 2 -->
+        <div class="card">
+            <img src="placeholder.png" alt="НЕТ, ТЫ НЕ ЗЛАЯ" onerror="this.style.display='none'">
+            <div class="card-text">НЕТ, ТЫ НЕ ЗЛАЯ</div>
+            <div class="support-line">ZERO · SUGAR · @rock_rockjohnson</div>
+        </div>
+
+        <!-- 3 -->
+        <div class="card">
+            <img src="placeholder.png" alt="НЕТ, ТЫ НЕ РАЗДРАЖАЕШЬ" onerror="this.style.display='none'">
+            <div class="card-text">НЕТ, ТЫ НЕ РАЗДРАЖАЕШЬ</div>
+            <div class="support-line">@rock_rockjohnson</div>
+        </div>
+
+        <!-- 4 -->
+        <div class="card">
+            <img src="placeholder.png" alt="НЕТ, ТЫ НЕ СТРАННАЯ" onerror="this.style.display='none'">
+            <div class="card-text">НЕТ, ТЫ НЕ СТРАННАЯ</div>
+            <div class="support-line">—</div>
+        </div>
+
+        <!-- 5 -->
+        <div class="card">
+            <img src="placeholder.png" alt="НЕТ, ТЫ НЕ ПЛОХАЯ" onerror="this.style.display='none'">
+            <div class="card-text">НЕТ, ТЫ НЕ ПЛОХАЯ </div>
+            <div class="support-line">TEREMANA · TEREMANA · TEREMANA · @rock_rockjohnson</div>
+        </div>
+
+        <!-- 6 -->
+        <div class="card">
+            <img src="placeholder.png" alt="НЕТ, ТЫ НЕ УРОДЛИВАЯ" onerror="this.style.display='none'">
+            <div class="card-text">НЕТ, ТЫ НЕ УРОДЛИВАЯ</div>
+            <div class="support-line">@rock_rockjohnson</div>
+        </div>
+
+        <!-- 7 -->
+        <div class="card">
+            <img src="placeholder.png" alt="НЕТ, ТЫ НЕ СКУЧНАЯ" onerror="this.style.display='none'">
+            <div class="card-text">НЕТ, ТЫ НЕ СКУЧНАЯ</div>
+            <div class="support-line">BBS · HAW · @rock_rockjohnson</div>
+        </div>
+
+        <!-- 8 -->
+        <div class="card">
+            <img src="placeholder.png" alt="БРО, С ТОБОЙ ВСЁ В ПОРЯДКЕ" onerror="this.style.display='none'">
+            <div class="card-text">ЗАЙКА, С ТОБОЙ ВСЁ В ПОРЯДКЕ!<br>НАЧНИ ЛЮБИТЬ СЕБЯ!</div>
+            <div class="support-line">@rock_rockjohnson</div>
+        </div>
+
+        <!-- ======== БЛОК ЛЮБВИ И ПОДДЕРЖКИ ======== -->
+        <div class="love-block">
+            <span class="big-heart">💛</span>
+            <h2>Ты нужна этому миру</h2>
+            <p>
+                Твоя боль реальна. Ты не обязана справляться одна.<br>
+                <span style="color:#f9a8d4;">Я рядом. Ты важна. Ты любима.</span>
+            </p>
+            <p style="font-size:15px; color:#9ca3af; margin-top:6px;">
+                🌙 Даже в самую тёмную ночь есть звёзды.
+            </p>
+        </
+
+        <!-- ======== ФУТЕР ======== -->
+        <div class="footer-note">
+            <p>Ты не одна. Если сейчас тяжело — просто дыши.<br>
+            Сделай глубокий вдох. Выдох. Ты справишься. ❤️</p>
+            <p style="margin-top:8px; font-size:12px; color:#4b5563;">
+                Этот сайт создан с любовью, чтобы ты помнила: <br>ты имеешь значение.
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
